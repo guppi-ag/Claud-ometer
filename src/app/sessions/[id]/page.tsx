@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { format } from 'date-fns';
+import { SessionSummaryCard } from '@/components/cards/SessionSummaryCard';
 
 export default function SessionDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
@@ -181,6 +182,8 @@ export default function SessionDetailPage({ params }: { params: Promise<{ id: st
 
         {/* Sidebar info */}
         <div className="space-y-4">
+          <SessionSummaryCard sessionId={id} />
+
           <Card className="border-border/50 shadow-sm">
             <CardHeader className="pb-3">
               <CardTitle className="text-sm font-semibold">Token Breakdown</CardTitle>
